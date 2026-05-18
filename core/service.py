@@ -11,7 +11,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 @transaction.atomic
-def create_reservation(*,product_id,cart,quantity,idempotency_key,ttl_minutes:RESERVATION_TTL_MINUTES,):
+def create_reservation(*,product_id,cart,quantity,idempotency_key,):
+    ttl_minutes = RESERVATION_TTL_MINUTES
 
     existing = Reservation.objects.filter(idempotency_key=idempotency_key).first()
 

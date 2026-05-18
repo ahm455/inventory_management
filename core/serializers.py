@@ -30,7 +30,6 @@ class CartItemSerializer(serializers.ModelSerializer):
         model = CartItem
         fields = "__all__"
 
-
 class ReservationSerializer(serializers.ModelSerializer):
     cart = CartSerializer(read_only=True)
     cart_id = serializers.IntegerField(write_only=True,source="cart")
