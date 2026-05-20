@@ -4,7 +4,7 @@ from celery import Celery
 
 os.environ.setdefault(
     "DJANGO_SETTINGS_MODULE",
-    "inventory_management.settings"
+    "inventory_management.settings.base"
 )
 
 app = Celery("inventory_management")
